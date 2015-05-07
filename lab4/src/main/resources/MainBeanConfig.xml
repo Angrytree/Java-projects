@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="unknfr" class="com.mycompany.app.UnknownFruit" scope="prototype" />
+
+	<bean id="apple" class="com.mycompany.app.Apple" scope="prototype" />
+
+	<bean id="orange" class="com.mycompany.app.Orange" scope="prototype" />
+
+	<bean id="melon" class="com.mycompany.app.Melon" scope="prototype" />
+
+	<bean id="frSlNoArgs" class="com.mycompany.app.FruitSlicer" />
+
+	<bean id="frSlArg" class="com.mycompany.app.FruitSlicer">
+		<constructor-arg ref="apple" />
+	</bean>
+
+	<bean id="frSlProp" class="com.mycompany.app.FruitSlicer">
+		<property name="fruit" ref="orange" />
+	</bean>
+
+	<util:map id="fruitMap" map-class="java.util.HashMap">
+		<entry key="apple" value-ref="apple" />
+		<entry key="orange" value-ref="orange" />
+		<entry key="melon" value-ref="melon" />
+	</util:map>
+	<bean id="frSlComNoArgs" class="com.mycompany.app.FruitSlicerCombain" />
+
+	<bean id="frSlComFruitArgs" class="com.mycompany.app.FruitSlicerCombain">
+		<constructor-arg ref="melon" />
+	</bean>
+
+	<bean id="frSlComMapArgs" class="com.mycompany.app.FruitSlicerCombain">
+		<constructor-arg ref="fruitMap" />
+	</bean>
+
+	<bean id="frSlComProp" class="com.mycompany.app.FruitSlicerCombain">
+		<property name="fruit" ref="melon" />
+		<property name="sliceConveyor" ref="fruitMap" />
+
+	</bean>
+
+</beans>
