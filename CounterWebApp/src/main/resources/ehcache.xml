@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+
+       <defaultCache eternal="true" maxElementsInMemory="400" overflowToDisk="false" />
+
+       <cache name="lecturersCache" maxElementsInMemory="30" eternal="true" overflowToDisk="false" />
+       <cache name="groupCache" maxElementsInMemory="150" eternal="true" overflowToDisk="false" />
+       <cache name="classroomCache" maxElementsInMemory="50" eternal="true" overflowToDisk="false" />
+       <cache name="subjectCache" maxElementsInMemory="50" eternal="true" overflowToDisk="false" />
+       <cache name="timetableCache" maxElementsInMemory="600" eternal="true" overflowToDisk="false" />
+       <cache name="weekCache" maxElementsInMemory="30" eternal="true" overflowToDisk="false" />
+</ehcache>

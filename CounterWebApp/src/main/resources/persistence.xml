@@ -1,0 +1,12 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+       <persistence-unit name="myUnit" transaction-type="RESOURCE_LOCAL">
+
+             <properties>
+                    <property name="hibernate.hbm2ddl.auto" value="update"/>
+                    <property name="hibernate.format_sql" value="true"/>
+             </properties>
+
+       </persistence-unit>
+
+</persistence>
